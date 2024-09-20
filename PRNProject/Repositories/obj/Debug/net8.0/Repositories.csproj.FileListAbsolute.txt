@@ -10,3 +10,15 @@ C:\Users\Phu\Desktop\prn221\PRNProject\Repositories\obj\Debug\net8.0\Repositorie
 C:\Users\Phu\Desktop\prn221\PRNProject\Repositories\obj\Debug\net8.0\refint\Repositories.dll
 C:\Users\Phu\Desktop\prn221\PRNProject\Repositories\obj\Debug\net8.0\Repositories.pdb
 C:\Users\Phu\Desktop\prn221\PRNProject\Repositories\obj\Debug\net8.0\ref\Repositories.dll
+D:\Coding\C#\ConvosDB\prn221\PRNProject\Repositories\bin\Debug\net8.0\Repositories.deps.json
+D:\Coding\C#\ConvosDB\prn221\PRNProject\Repositories\bin\Debug\net8.0\Repositories.dll
+D:\Coding\C#\ConvosDB\prn221\PRNProject\Repositories\bin\Debug\net8.0\Repositories.pdb
+D:\Coding\C#\ConvosDB\prn221\PRNProject\Repositories\obj\Debug\net8.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\C#\ConvosDB\prn221\PRNProject\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
+D:\Coding\C#\ConvosDB\prn221\PRNProject\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
+D:\Coding\C#\ConvosDB\prn221\PRNProject\Repositories\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
+D:\Coding\C#\ConvosDB\prn221\PRNProject\Repositories\obj\Debug\net8.0\Repositories.sourcelink.json
+D:\Coding\C#\ConvosDB\prn221\PRNProject\Repositories\obj\Debug\net8.0\Repositories.dll
+D:\Coding\C#\ConvosDB\prn221\PRNProject\Repositories\obj\Debug\net8.0\refint\Repositories.dll
+D:\Coding\C#\ConvosDB\prn221\PRNProject\Repositories\obj\Debug\net8.0\Repositories.pdb
+D:\Coding\C#\ConvosDB\prn221\PRNProject\Repositories\obj\Debug\net8.0\ref\Repositories.dll

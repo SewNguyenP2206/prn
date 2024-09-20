@@ -3,12 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
-
 namespace BussinessObjects.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class Update : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -107,14 +105,12 @@ namespace BussinessObjects.Migrations
                         name: "FK_Friendships_Users_AddresseeId",
                         column: x => x.AddresseeId,
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Friendships_Users_RequesterId",
                         column: x => x.RequesterId,
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -162,23 +158,12 @@ namespace BussinessObjects.Migrations
                         name: "FK_MemberRoles_Roles_RoleId",
                         column: x => x.RoleId,
                         principalTable: "Roles",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_MemberRoles_ServerMembers_MemberId",
                         column: x => x.MemberId,
                         principalTable: "ServerMembers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.InsertData(
-                table: "Roles",
-                columns: new[] { "Id", "Color", "CreatedAt", "Mentionable", "Name", "Position", "ServerId" },
-                values: new object[,]
-                {
-                    { new Guid("dc7d0fd0-90a7-47f2-b50b-4d220d00ee1e"), "#FF0000", new DateTime(2024, 9, 20, 7, 14, 13, 502, DateTimeKind.Utc).AddTicks(6189), true, "Admin", 1, new Guid("666e43b0-8b4c-4a44-a171-3b21bd1bb028") },
-                    { new Guid("e4bb7211-5f9b-4f70-97ba-4360cba29339"), "#00FF00", new DateTime(2024, 9, 20, 7, 14, 13, 502, DateTimeKind.Utc).AddTicks(6209), false, "Member", 2, new Guid("b01f50a9-acb1-45cf-864b-9f9f7fb8407a") }
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -187,9 +172,10 @@ namespace BussinessObjects.Migrations
                 column: "AddresseeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Friendships_RequesterId",
+                name: "IX_Friendships_RequesterId_AddresseeId",
                 table: "Friendships",
-                column: "RequesterId");
+                columns: new[] { "RequesterId", "AddresseeId" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_MemberRoles_RoleId",

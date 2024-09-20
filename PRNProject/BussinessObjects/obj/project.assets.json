@@ -4107,19 +4107,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Phu\\.nuget\\packages\\": {}
+    "C:\\Users\\MSI\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Phu\\Desktop\\prn221\\PRNProject\\BussinessObjects\\BussinessObjects.csproj",
+      "projectUniqueName": "D:\\Coding\\C#\\ConvosDB\\prn221\\PRNProject\\BussinessObjects\\BussinessObjects.csproj",
       "projectName": "BussinessObjects",
-      "projectPath": "C:\\Users\\Phu\\Desktop\\prn221\\PRNProject\\BussinessObjects\\BussinessObjects.csproj",
-      "packagesPath": "C:\\Users\\Phu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Phu\\Desktop\\prn221\\PRNProject\\BussinessObjects\\obj\\",
+      "projectPath": "D:\\Coding\\C#\\ConvosDB\\prn221\\PRNProject\\BussinessObjects\\BussinessObjects.csproj",
+      "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
+      "outputPath": "D:\\Coding\\C#\\ConvosDB\\prn221\\PRNProject\\BussinessObjects\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Phu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MSI\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4127,6 +4127,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4187,7 +4188,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

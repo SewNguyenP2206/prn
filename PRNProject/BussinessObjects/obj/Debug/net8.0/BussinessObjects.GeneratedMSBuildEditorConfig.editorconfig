@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BussinessObjects
-build_property.ProjectDir = C:\Users\Phu\Desktop\prn221\PRNProject\BussinessObjects\
+build_property.ProjectDir = D:\Coding\C#\ConvosDB\prn221\PRNProject\BussinessObjects\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

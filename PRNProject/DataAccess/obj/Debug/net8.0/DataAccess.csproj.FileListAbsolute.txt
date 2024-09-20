@@ -10,3 +10,15 @@ C:\Users\Phu\Desktop\prn221\PRNProject\DataAccess\obj\Debug\net8.0\DataAccess.dl
 C:\Users\Phu\Desktop\prn221\PRNProject\DataAccess\obj\Debug\net8.0\refint\DataAccess.dll
 C:\Users\Phu\Desktop\prn221\PRNProject\DataAccess\obj\Debug\net8.0\DataAccess.pdb
 C:\Users\Phu\Desktop\prn221\PRNProject\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll
+D:\Coding\C#\ConvosDB\prn221\PRNProject\DataAccess\bin\Debug\net8.0\DataAccess.deps.json
+D:\Coding\C#\ConvosDB\prn221\PRNProject\DataAccess\bin\Debug\net8.0\DataAccess.dll
+D:\Coding\C#\ConvosDB\prn221\PRNProject\DataAccess\bin\Debug\net8.0\DataAccess.pdb
+D:\Coding\C#\ConvosDB\prn221\PRNProject\DataAccess\obj\Debug\net8.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\C#\ConvosDB\prn221\PRNProject\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfoInputs.cache
+D:\Coding\C#\ConvosDB\prn221\PRNProject\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfo.cs
+D:\Coding\C#\ConvosDB\prn221\PRNProject\DataAccess\obj\Debug\net8.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\Coding\C#\ConvosDB\prn221\PRNProject\DataAccess\obj\Debug\net8.0\DataAccess.sourcelink.json
+D:\Coding\C#\ConvosDB\prn221\PRNProject\DataAccess\obj\Debug\net8.0\DataAccess.dll
+D:\Coding\C#\ConvosDB\prn221\PRNProject\DataAccess\obj\Debug\net8.0\refint\DataAccess.dll
+D:\Coding\C#\ConvosDB\prn221\PRNProject\DataAccess\obj\Debug\net8.0\DataAccess.pdb
+D:\Coding\C#\ConvosDB\prn221\PRNProject\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll

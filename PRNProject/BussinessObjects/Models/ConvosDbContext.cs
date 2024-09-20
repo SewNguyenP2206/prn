@@ -5,51 +5,60 @@ namespace BussinessObjects.Models
 {
     public class ConvosDbContext : DbContext
     {
-        public ConvosDbContext() { }
-
         public ConvosDbContext(DbContextOptions<ConvosDbContext> options)
             : base(options)
         { }
 
         // DbSet properties for all models
-        public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Server> Servers { get; set; }
-        public virtual DbSet<ServerMember> ServerMembers { get; set; }
-        public virtual DbSet<Friendship> Friendships { get; set; }
-        public virtual DbSet<Role> Roles { get; set; }
-        public virtual DbSet<MemberRole> MemberRoles { get; set; }
-        public virtual DbSet<InviteUsage> InviteUsages { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Server> Servers { get; set; }
+        public DbSet<ServerMember> ServerMembers { get; set; }
+        public DbSet<Friendship> Friendships { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<MemberRole> MemberRoles { get; set; }
+        public DbSet<InviteUsage> InviteUsages { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
             base.OnModelCreating(modelBuilder);
 
             // Composite key for 'MemberRole' table
             modelBuilder.Entity<MemberRole>()
                 .HasKey(mr => new { mr.MemberId, mr.RoleId });
 
-            // Configure the relationship between User and Friendship (Requester)
+            // Restrict cascading deletes for the Friendships table to avoid multiple cascade paths
             modelBuilder.Entity<User>()
                 .HasMany(u => u.RequestedFriendships)
                 .WithOne(f => f.Requester)
                 .HasForeignKey(f => f.RequesterId)
-                .OnDelete(DeleteBehavior.Restrict);  // No cascading delete
+                .OnDelete(DeleteBehavior.Restrict);  // Restrict deletion of user if they are an initiator
 
-            // Configure the relationship between User and Friendship (Addressee)
             modelBuilder.Entity<User>()
                 .HasMany(u => u.ReceivedFriendships)
                 .WithOne(f => f.Addressee)
                 .HasForeignKey(f => f.AddresseeId)
-                .OnDelete(DeleteBehavior.Restrict);  // No cascading delete
+                .OnDelete(DeleteBehavior.Restrict);  // Restrict deletion of user if they are a receiver
 
-            // Primary key and unique constraint for Friendship
+            // Configure the Friendship entity
             modelBuilder.Entity<Friendship>()
                 .HasKey(f => f.Id);
 
+            // Ensure a unique friendship between two users (Requester and Addressee)
             modelBuilder.Entity<Friendship>()
                 .HasIndex(f => new { f.RequesterId, f.AddresseeId })
                 .IsUnique();
+
+            modelBuilder.Entity<Friendship>()
+                .HasOne(f => f.Requester)
+                .WithMany(f => f.RequestedFriendships)
+                .HasForeignKey(f => f.RequesterId)
+                .OnDelete(DeleteBehavior.ClientSetNull);
+
+            modelBuilder.Entity<Friendship>()
+                .HasOne(f => f.Addressee)
+                .WithMany(f => f.ReceivedFriendships)
+                .HasForeignKey(f => f.AddresseeId)
+                .OnDelete(DeleteBehavior.ClientSetNull);
 
             // Relationships for 'ServerMember'
             modelBuilder.Entity<ServerMember>()
@@ -66,12 +75,14 @@ namespace BussinessObjects.Models
             modelBuilder.Entity<MemberRole>()
                 .HasOne(mr => mr.Role)
                 .WithMany(r => r.MemberRoles)
-                .HasForeignKey(mr => mr.RoleId);
+                .HasForeignKey(mr => mr.RoleId)
+            .OnDelete(DeleteBehavior.ClientSetNull);
 
             modelBuilder.Entity<MemberRole>()
                 .HasOne(mr => mr.ServerMember)
                 .WithMany(sm => sm.MemberRoles)
-                .HasForeignKey(mr => mr.MemberId);
+                .HasForeignKey(mr => mr.MemberId)
+            .OnDelete(DeleteBehavior.ClientSetNull);
         }
 
 

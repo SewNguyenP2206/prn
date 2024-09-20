@@ -41,7 +41,8 @@ namespace BussinessObjects.Migrations
 
                     b.HasIndex("AddresseeId");
 
-                    b.HasIndex("RequesterId");
+                    b.HasIndex("RequesterId", "AddresseeId")
+                        .IsUnique();
 
                     b.ToTable("Friendships");
                 });
@@ -115,28 +116,6 @@ namespace BussinessObjects.Migrations
                     b.HasIndex("ServerId");
 
                     b.ToTable("Roles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("dc7d0fd0-90a7-47f2-b50b-4d220d00ee1e"),
-                            Color = "#FF0000",
-                            CreatedAt = new DateTime(2024, 9, 20, 7, 14, 13, 502, DateTimeKind.Utc).AddTicks(6189),
-                            Mentionable = true,
-                            Name = "Admin",
-                            Position = 1,
-                            ServerId = new Guid("666e43b0-8b4c-4a44-a171-3b21bd1bb028")
-                        },
-                        new
-                        {
-                            Id = new Guid("e4bb7211-5f9b-4f70-97ba-4360cba29339"),
-                            Color = "#00FF00",
-                            CreatedAt = new DateTime(2024, 9, 20, 7, 14, 13, 502, DateTimeKind.Utc).AddTicks(6209),
-                            Mentionable = false,
-                            Name = "Member",
-                            Position = 2,
-                            ServerId = new Guid("b01f50a9-acb1-45cf-864b-9f9f7fb8407a")
-                        });
                 });
 
             modelBuilder.Entity("BussinessObjects.Models.Server", b =>
@@ -272,13 +251,11 @@ namespace BussinessObjects.Migrations
                     b.HasOne("BussinessObjects.Models.User", "Addressee")
                         .WithMany("ReceivedFriendships")
                         .HasForeignKey("AddresseeId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BussinessObjects.Models.User", "Requester")
                         .WithMany("RequestedFriendships")
                         .HasForeignKey("RequesterId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Addressee");
@@ -291,13 +268,11 @@ namespace BussinessObjects.Migrations
                     b.HasOne("BussinessObjects.Models.ServerMember", "ServerMember")
                         .WithMany("MemberRoles")
                         .HasForeignKey("MemberId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BussinessObjects.Models.Role", "Role")
                         .WithMany("MemberRoles")
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Role");
