@@ -13,13 +13,14 @@ namespace BussinessObjects.Models
         public Guid Id { get; set; }
         public string Name { get; set; }
 
-        [ForeignKey("ServerId")]
         public Guid ServerId { get; set; }
         public int Position { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 
         public ICollection<Channel> Channels { get; set; }
+
+        [ForeignKey("ServerId")]
         public Server Server { get; set; }
     }
 }
