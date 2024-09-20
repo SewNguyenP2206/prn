@@ -8,13 +8,12 @@ namespace BussinessObjects.Models
         [Key]
         public Guid Id { get; set; } = Guid.NewGuid();
 
-        [Required]
         public Guid InviteId { get; set; }
 
-        [Required]
         public Guid MemberId { get; set; }
 
-        [Required]
         public DateTime UsedAt { get; set; }
+        public ServerMember ServerMember { get; set; }
+        public Invite Invite { get; set; }
     }
 }

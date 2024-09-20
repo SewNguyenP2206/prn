@@ -33,5 +33,7 @@ namespace BussinessObjects.Models
         public bool Banned { get; set; }
 
         public ICollection<MemberRole> MemberRoles { get; set; }
+        public ICollection<Invite> Invites { get; set; }
+
     }
 }

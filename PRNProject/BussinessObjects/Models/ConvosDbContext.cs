@@ -17,6 +17,11 @@ namespace BussinessObjects.Models
         public DbSet<Role> Roles { get; set; }
         public DbSet<MemberRole> MemberRoles { get; set; }
         public DbSet<InviteUsage> InviteUsages { get; set; }
+        public DbSet<Invite> Invites { get; set; }
+        public DbSet<RolePermission> RolePermissions { get; set; }
+        public virtual DbSet<ChannelRolePermission> ChannelRolePermissions { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Channel> Channels { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -83,8 +88,64 @@ namespace BussinessObjects.Models
                 .WithMany(sm => sm.MemberRoles)
                 .HasForeignKey(mr => mr.MemberId)
             .OnDelete(DeleteBehavior.ClientSetNull);
+
+            modelBuilder.Entity<InviteUsage>()
+             .HasOne(iu => iu.Invite)
+            .WithMany()
+            .HasForeignKey(iu => iu.InviteId);
+
+            modelBuilder.Entity<Server>()
+                .HasMany(s => s.Invites)
+                .WithOne(i => i.Server)
+                .HasForeignKey(i => i.ServerId)
+                .OnDelete(DeleteBehavior.ClientSetNull);
+
+            modelBuilder.Entity<ServerMember>()
+              .HasMany(sm => sm.Invites)
+              .WithOne(i => i.ServerMember)
+              .HasForeignKey(i => i.CreatorId)
+              .OnDelete(DeleteBehavior.ClientSetNull);
+
+
+            modelBuilder.Entity<RolePermission>()
+        .HasOne(rp => rp.Role)
+        .WithMany()
+        .HasForeignKey(rp => rp.RoleId)
+              .OnDelete(DeleteBehavior.ClientSetNull);
+
+
+            modelBuilder.Entity<RolePermission>()
+                .HasOne(rp => rp.Permission)
+                .WithMany()
+                .HasForeignKey(rp => rp.PermissionId)
+              .OnDelete(DeleteBehavior.ClientSetNull);
+
+            modelBuilder.Entity<ChannelRolePermission>()
+              .HasOne(rp => rp.Role)
+              .WithMany()
+              .HasForeignKey(rp => rp.RoleId)
+            .OnDelete(DeleteBehavior.ClientSetNull);
+
+            modelBuilder.Entity<ChannelRolePermission>()
+             .HasOne(rp => rp.Permission)
+             .WithMany()
+             .HasForeignKey(rp => rp.PermissionId)
+           .OnDelete(DeleteBehavior.ClientSetNull);
+
+            modelBuilder.Entity<ChannelRolePermission>()
+             .HasOne(rp => rp.Channel)
+             .WithMany()
+             .HasForeignKey(rp => rp.ChannelId)
+           .OnDelete(DeleteBehavior.ClientSetNull);
+
+
+            modelBuilder.Entity<Channel>()
+           .HasOne(ch => ch.Category)
+           .WithMany()
+           .HasForeignKey(ch => ch.CategoryId)
+         .OnDelete(DeleteBehavior.ClientSetNull);
         }
-
-
     }
+
+
 }

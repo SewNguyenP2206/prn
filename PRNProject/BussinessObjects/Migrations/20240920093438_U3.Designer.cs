@@ -4,6 +4,7 @@ using BussinessObjects.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BussinessObjects.Migrations
 {
     [DbContext(typeof(ConvosDbContext))]
-    partial class ConvosDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240920093438_U3")]
+    partial class U3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,12 +44,17 @@ namespace BussinessObjects.Migrations
                     b.Property<Guid>("ServerId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid?>("ServerId1")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ServerId");
+
+                    b.HasIndex("ServerId1");
 
                     b.ToTable("Categories");
                 });
@@ -460,10 +468,13 @@ namespace BussinessObjects.Migrations
             modelBuilder.Entity("BussinessObjects.Models.Category", b =>
                 {
                     b.HasOne("BussinessObjects.Models.Server", "Server")
-                        .WithMany("Categories")
+                        .WithMany()
                         .HasForeignKey("ServerId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("BussinessObjects.Models.Server", null)
+                        .WithMany("Categories")
+                        .HasForeignKey("ServerId1");
 
                     b.Navigation("Server");
                 });

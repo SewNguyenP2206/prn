@@ -24,6 +24,8 @@ namespace BussinessObjects.Models
 
         public ICollection<ServerMember> ServerMembers { get; set; }
         public ICollection<Role> Roles { get; set; }
-
+        public ICollection<Invite> Invites { get; set; }
+        public ICollection<Category> Categories { get; set; }
+        public ICollection<Channel> Channels { get; set; }
     }
 }

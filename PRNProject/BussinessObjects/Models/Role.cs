@@ -30,5 +30,7 @@ namespace BussinessObjects.Models
         public Server Server { get; set; }
 
         public ICollection<MemberRole> MemberRoles { get; set; } 
+        public ICollection<ChannelRolePermission> ChannelRolePermissions { get; set; }
+
     }
 }
