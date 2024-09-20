@@ -28,5 +28,7 @@ namespace BussinessObjects.Models
 
         [ForeignKey("ServerId")]
         public Server Server { get; set; }
+
+        public ICollection<MemberRole> MemberRoles { get; set; } 
     }
 }

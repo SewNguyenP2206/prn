@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PydF1jYfsXG91RDf4zFWTzrXD47+9Rm/bcStZM1JmPqhUItmCp1gW9Rl+Y0xg4dzWsdUR5nV0eaIC5E4IIbHEA==",
+  "dgSpecHash": "d9CDxknYSwYz7W/eotqDl25EwUe5TFq1PO8BXR8Q9CyrFkK14N9HAyPP1SgVX1euRarzWxRlMb7LOXBolNhQAg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Phu\\Desktop\\PRNProject\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\Phu\\Desktop\\prn221\\PRNProject\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -13,16 +13,18 @@ namespace BussinessObjects.Models
         [Key]
         public Guid Id { get; set; } = Guid.NewGuid();
 
+        [ForeignKey("Addressee")]
         [Required]
         public Guid RequesterId { get; set; }
 
-        [ForeignKey("RequesterId")]
+        
         public User Requester { get; set; }
 
+        [ForeignKey("Requester")]
         [Required]
         public Guid AddresseeId { get; set; }
 
-        [ForeignKey("AddresseeId")]
+       
         public User Addressee { get; set; }
 
         [Required]

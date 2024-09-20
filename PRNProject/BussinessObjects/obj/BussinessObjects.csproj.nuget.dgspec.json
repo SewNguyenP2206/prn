@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Phu\\Desktop\\PRNProject\\BussinessObjects\\BussinessObjects.csproj": {}
+    "C:\\Users\\Phu\\Desktop\\prn221\\PRNProject\\BussinessObjects\\BussinessObjects.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Phu\\Desktop\\PRNProject\\BussinessObjects\\BussinessObjects.csproj": {
+    "C:\\Users\\Phu\\Desktop\\prn221\\PRNProject\\BussinessObjects\\BussinessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Phu\\Desktop\\PRNProject\\BussinessObjects\\BussinessObjects.csproj",
+        "projectUniqueName": "C:\\Users\\Phu\\Desktop\\prn221\\PRNProject\\BussinessObjects\\BussinessObjects.csproj",
         "projectName": "BussinessObjects",
-        "projectPath": "C:\\Users\\Phu\\Desktop\\PRNProject\\BussinessObjects\\BussinessObjects.csproj",
+        "projectPath": "C:\\Users\\Phu\\Desktop\\prn221\\PRNProject\\BussinessObjects\\BussinessObjects.csproj",
         "packagesPath": "C:\\Users\\Phu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Phu\\Desktop\\PRNProject\\BussinessObjects\\obj\\",
+        "outputPath": "C:\\Users\\Phu\\Desktop\\prn221\\PRNProject\\BussinessObjects\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Phu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,6 +44,28 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

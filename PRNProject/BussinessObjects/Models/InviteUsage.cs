@@ -1,12 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace BussinessObjects.Models
 {
-     class InviteUsage
+    public class InviteUsage
     {
+        [Key]
+        public Guid Id { get; set; } = Guid.NewGuid();
+
+        [Required]
+        public Guid InviteId { get; set; }
+
+        [Required]
+        public Guid MemberId { get; set; }
+
+        [Required]
+        public DateTime UsedAt { get; set; }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Phu\\Desktop\\PRNProject\\DataAccess\\DataAccess.csproj": {}
+    "C:\\Users\\Phu\\Desktop\\prn221\\PRNProject\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Phu\\Desktop\\PRNProject\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\Phu\\Desktop\\prn221\\PRNProject\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Phu\\Desktop\\PRNProject\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Phu\\Desktop\\prn221\\PRNProject\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\Phu\\Desktop\\PRNProject\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\Phu\\Desktop\\prn221\\PRNProject\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\Phu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Phu\\Desktop\\PRNProject\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\Phu\\Desktop\\prn221\\PRNProject\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Phu\\AppData\\Roaming\\NuGet\\NuGet.Config",

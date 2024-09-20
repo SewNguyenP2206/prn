@@ -31,5 +31,7 @@ namespace BussinessObjects.Models
         public bool Deafened { get; set; }
 
         public bool Banned { get; set; }
+
+        public ICollection<MemberRole> MemberRoles { get; set; }
     }
 }
